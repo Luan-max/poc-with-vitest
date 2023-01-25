@@ -16,7 +16,7 @@ export class CreateSchedules {
     
     const overLappingSchedule = await this.scheduleRepository.find(startsAt, endsAt)
 
-    if(overLappingSchedule) throw new Error('error porque já existe')
+    if(overLappingSchedule) throw new Error('It was not possible because already exists schedule in this date')
 
     const schedule = new Schedules({ customer, startsAt, endsAt })
 
