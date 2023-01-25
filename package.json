@@ -1,0 +1,21 @@
+{
+  "name": "testing-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.28.2",
+    "eslint": "^8.32.0",
+    "vitest": "^0.28.2"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
