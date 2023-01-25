@@ -2,34 +2,34 @@ import { expect, test } from "vitest";
 import { Schedules } from "./schedules";
 import { getFutureDate } from "../tests/utils/get-future-date";
 
-test("create schedule", () => {
+test("should be able to create schedule", () => {
   const startsAt = getFutureDate('2022-04-12')
   const endsAt = getFutureDate('2022-04-14')
 
   const schedule = new Schedules({
-    customer: "Luan",
+    customer: 'Vitest',
     startsAt,
     endsAt,
   });
 
   expect(schedule).toBeInstanceOf(Schedules);
-  expect(schedule.customer).toEqual("Luan");
+  expect(schedule.customer).toEqual('Vitest');
 });
 
-test("cannot create schedule with end date before starts date", () => {
-  const startDate = getFutureDate('2022-04-12')
-  const endDate = getFutureDate('2022-04-10')
+test("should not be able to create a schedule with the date before the current one", () => {
+  const startsAt = getFutureDate('2022-04-12')
+  const endsAt = getFutureDate('2022-04-10')
 
   expect(() => {
     return new Schedules({
-      customer: "Luan",
-      startsAt: startDate,
-      endsAt: endDate,
+      customer: 'Vitest',
+      startsAt,
+      endsAt,
     });
   }).toThrow();
 });
 
-test("it is not possible to create a schedule with the old current date", () => {
+test("should not be able to create a schedule with the old current date", () => {
   const startsAt = new Date()
   const endsAt = new Date()
 
@@ -38,7 +38,7 @@ test("it is not possible to create a schedule with the old current date", () => 
 
   expect(() => {
     return new Schedules({
-      customer: "Luan",
+      customer: 'Vitest',
       startsAt,
       endsAt,
     });
