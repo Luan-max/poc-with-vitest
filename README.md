@@ -17,3 +17,5 @@ Expect, snapshot, coverage e muito mais - migrar do Jest é simples.
 **ESM, TypeScript, JSX**
 
 Suporte para ESM, TypeScript e JSX pronto para uso desenvolvido por esbuild
+
+Link: https://vitest.dev/
